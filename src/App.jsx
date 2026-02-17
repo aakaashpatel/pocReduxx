@@ -1,19 +1,17 @@
-import { fetchPhotos } from "./api/mediaApi"
+import { fetchPhotos } from "./api/mediaApi";
 
 const App = () => {
-
-  function getPhoto(){
-    fetchPhotos('cat')
+  async function getPhoto() {
+    const data = await fetchPhotos("cat");
+    console.log(data);
   }
   return (
     <div>
-      <h1 className=''> 
-        <button onClick = {getPhoto}>
-          get photo
-        </button>
+      <h1 className="">
+        <button onClick={getPhoto}>get photo</button>
       </h1>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
